@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Krub');
+
+body { 
+  padding: 20px; 
+  background: rgb(230, 230, 250); 
+}
+
+.line {
+  display: inline-block;
+  padding: 20px 45px;
+  border-radius: 10px;
+  background: #afcdff;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin: 40px 50px 0 50px;
+}
+
+#line-red .stop,
+#line-red .line-fill {
+  background: #ff2365;
+}
+
+#line-green .stop,
+#line-green .line-fill {
+  background: #55e97f;
+}
+
+.stop {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 15px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.stop-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 150px;
+  text-align: center;
+  font-size: 10px;
+  font-family: "Krub";
+}
+
+
+.line-fill {
+  height: 5vh;
+  width: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.line-14::before {
+  content: "Linje 14";
+  top: -10px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  width: 100%;
+  text-align: center;
+  font-family: "Krub";
+  font-size: 22px;
+}
+
+.train {
+  content: "";
+  height: 20px;
+  width: 20px;
+}
+
+.active {
+  background: white !important;
+  position: relative;
+}
+
+.active::after {
+  content: attr(data-content);
+  position: absolute;
+  background: white;
+  left: 0;
+  top: 50%;
+  transform: translate(25px, -50%);
+  font-family: "Krub";
+  white-space: nowrap;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #959595;
+  text-transform: capitalize;
+}
+
+.active--down::after {
+  transform: translate(calc(-100% - 5px), -50%);
+}
+
